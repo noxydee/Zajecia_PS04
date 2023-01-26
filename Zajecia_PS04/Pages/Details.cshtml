@@ -1,0 +1,48 @@
+﻿@page
+@model Zajecia_PS04.Pages.DetailsModel
+@{
+    ViewData["Title"] = "Szczegóły Produktu";
+}
+
+<form method="post">
+<div class="form-group">
+<div class="row col-sm-12">
+    <button class="btn btn btn-primary">Dodaj do koszyka</button>
+</div>
+</div>
+<br />
+
+<input asp-for="DetailProduct.id" class="form-control" type="hidden">
+<input asp-for="DetailProduct.name" class="form-control" type="hidden">
+<input asp-for="DetailProduct.price" class="form-control" type="hidden">
+
+</form>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model =>
+Model.ProductList[0].id)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model =>
+    Model.ProductList[0].name)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model =>
+        Model.ProductList[0].price)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        
+            <tr>
+                <th scope="row">@Model.DetailProduct.id</th>
+                <td>@Model.DetailProduct.name</td>
+                <td>@Model.DetailProduct.price</td>
+                
+            </tr>
+        
+    </tbody>
+</table>
